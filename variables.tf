@@ -24,7 +24,7 @@ variable "vpc_id" {
 #       status code: 400, request id: aea153c2-8fde-11e8-8486-17623168248f
 variable "vpc_subnet_ids" {
   description = "Subnets the ES cluster should be created in."
-  type        = "list"
+  type        = list(string)
 }
 
 variable "instance_type" {
@@ -34,7 +34,7 @@ variable "instance_type" {
 
 variable "jump_ami" {
   description = "AMI to use for the jump station. If the parameter is not set, no jum-instance will be created"
-  default     = ""                                                                                              // ami-afd15ed0 ... eu-central-1 Amazon Linux 2 LTS ( amzn2-ami-hvm-2017.12.0.20180509-x86_64-gp2 )
+  default     = "" // ami-afd15ed0 ... eu-central-1 Amazon Linux 2 LTS ( amzn2-ami-hvm-2017.12.0.20180509-x86_64-gp2 )
 }
 
 variable "instance_key" {
@@ -56,3 +56,4 @@ variable "es_version" {
   description = "The elastic search version to be used."
   default     = 6.3
 }
+
