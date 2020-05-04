@@ -59,5 +59,6 @@ module "es" {
   dedicated_master_type = var.instance_type
   es_zone_awareness     = false
   ebs_volume_size       = var.ebs_volume_size
+  create_iam_service_linked_role  = var.create_iam_service_linked_role
 }
 

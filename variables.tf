@@ -57,3 +57,10 @@ variable "es_version" {
   default     = 6.3
 }
 
+variable "create_iam_service_linked_role" {
+  description = "Whether to create IAM service linked role for AWS ElasticSearch service. Can be only one per AWS account."
+  type        = bool
+  # Creation of an already existent role is not possible and IAM roles are region independent.
+  # So we need only one role for the whole account to avoid errors if we deploy more than one region.
+  default     = false
+}
