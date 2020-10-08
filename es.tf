@@ -57,6 +57,7 @@ module "es" {
   instance_count        = var.instance_count
   instance_type         = var.instance_type
   dedicated_master_type = var.instance_type
+  advanced_options      = var.advanced_options
   es_zone_awareness     = false
   ebs_volume_size       = var.ebs_volume_size
   create_iam_service_linked_role  = var.create_iam_service_linked_role
