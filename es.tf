@@ -52,7 +52,7 @@ module "es" {
     security_group_ids = ["${aws_security_group.es_allow_all.id}"]
     subnet_ids         = "${var.vpc_subnet_ids}"
   }
-
+  advanced_options      = var.advanced_options
   es_version            = "${var.es_version}"
   instance_count        = "${var.instance_count}"
   instance_type         = "${var.instance_type}"
